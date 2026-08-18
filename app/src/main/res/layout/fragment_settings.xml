@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="@string/settings"
+            app:titleCentered="true" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/spacing_32">
+
+            <!-- Premium Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPremium"
+                style="@style/Widget.Lumora.Card.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_24"
+                android:layout_marginTop="@dimen/spacing_16"
+                app:cardBackgroundColor="?attr/colorSecondaryContainer">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/spacing_16">
+
+                    <TextView
+                        android:id="@+id/tvPremiumStatus"
+                        style="@style/TextAppearance.Lumora.TitleMedium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/upgrade_premium"
+                        android:textColor="?attr/colorOnSecondaryContainer"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/image_guardian"
+                        app:tint="?attr/colorOnSecondaryContainer" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Appearance -->
+            <TextView
+                style="@style/TextAppearance.Lumora.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_24"
+                android:layout_marginTop="@dimen/spacing_32"
+                android:text="@string/appearance"
+                android:textColor="?attr/colorPrimary" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_24"
+                android:layout_marginTop="@dimen/spacing_12"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/itemTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/spacing_16">
+                        <TextView style="@style/TextAppearance.Lumora.BodyLarge" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/theme" />
+                        <TextView android:id="@+id/tvCurrentTheme" style="@style/TextAppearance.Lumora.BodyMedium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:alpha="0.7" tools:text="System" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Language -->
+            <TextView
+                style="@style/TextAppearance.Lumora.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_24"
+                android:layout_marginTop="@dimen/spacing_32"
+                android:text="@string/general"
+                android:textColor="?attr/colorPrimary" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_24"
+                android:layout_marginTop="@dimen/spacing_12"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/itemLanguage"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/spacing_16">
+                        <TextView style="@style/TextAppearance.Lumora.BodyLarge" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/language" />
+                        <TextView android:id="@+id/tvCurrentLanguage" style="@style/TextAppearance.Lumora.BodyMedium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:alpha="0.7" tools:text="English" />
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginHorizontal="@dimen/spacing_16" />
+
+                    <TextView
+                        android:id="@+id/itemExport"
+                        style="@style/TextAppearance.Lumora.BodyLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/spacing_16"
+                        android:text="@string/export_history" />
+
+                    <com.google.android.material.divider.MaterialDivider android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginHorizontal="@dimen/spacing_16" />
+
+                    <TextView
+                        android:id="@+id/itemReset"
+                        style="@style/TextAppearance.Lumora.BodyLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/spacing_16"
+                        android:text="@string/factory_reset"
+                        android:textColor="?attr/colorError" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- About Section -->
+            <TextView
+                style="@style/TextAppearance.Lumora.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_24"
+                android:layout_marginTop="@dimen/spacing_32"
+                android:text="@string/about"
+                android:textColor="?attr/colorPrimary" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_24"
+                android:layout_marginTop="@dimen/spacing_12"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/itemPrivacy"
+                        style="@style/TextAppearance.Lumora.BodyLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/spacing_16"
+                        android:text="@string/privacy_policy" />
+
+                    <com.google.android.material.divider.MaterialDivider android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginHorizontal="@dimen/spacing_16" />
+
+                    <TextView
+                        android:id="@+id/itemTerms"
+                        style="@style/TextAppearance.Lumora.BodyLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/spacing_16"
+                        android:text="@string/terms_conditions" />
+
+                    <com.google.android.material.divider.MaterialDivider android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginHorizontal="@dimen/spacing_16" />
+
+                    <TextView
+                        android:id="@+id/itemLicenses"
+                        style="@style/TextAppearance.Lumora.BodyLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/spacing_16"
+                        android:text="Open Source Licenses" />
+
+                    <com.google.android.material.divider.MaterialDivider android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginHorizontal="@dimen/spacing_16" />
+
+                    <TextView
+                        android:id="@+id/tvVersion"
+                        style="@style/TextAppearance.Lumora.BodyLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/spacing_16"
+                        android:alpha="0.6"
+                        tools:text="Version 1.0.0 (Build 1)" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

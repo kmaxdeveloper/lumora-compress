@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Premium Header with Identity -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/heroHeader"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="0dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_smart" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_gradient_scrim"
+                android:backgroundTint="?attr/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:padding="32dp">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/image_unlock"
+                    app:tint="?attr/colorOnPrimary" />
+
+                <TextView
+                    style="@style/TextAppearance.Lumora.DisplaySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Lumora Pro"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/TextAppearance.Lumora.BodyLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Professional technology at your fingertips"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:alpha="0.9" />
+
+            </LinearLayout>
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBack"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        app:icon="@drawable/ic_back"
+        app:iconTint="?attr/colorOnPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/heroHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="32dp">
+
+            <!-- Premium Already Info -->
+            <LinearLayout
+                android:id="@+id/layoutAlreadyPremium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.Lumora.Card.Filled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="?attr/colorSecondaryContainer">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="24dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_check"
+                            app:tint="?attr/colorOnSecondaryContainer" />
+
+                        <TextView
+                            style="@style/TextAppearance.Lumora.TitleLarge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Subscription Active"
+                            android:textColor="?attr/colorOnSecondaryContainer"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/TextAppearance.Lumora.BodyMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Enjoy all professional features"
+                            android:textColor="?attr/colorOnSecondaryContainer"
+                            android:alpha="0.8" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Benefits List -->
+            <LinearLayout
+                android:id="@+id/layoutBenefits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/item_benefit" android:id="@+id/benefit1" />
+                <include layout="@layout/item_benefit" android:id="@+id/benefit2" />
+                <include layout="@layout/item_benefit" android:id="@+id/benefit3" />
+                <include layout="@layout/item_benefit" android:id="@+id/benefit4" />
+                <include layout="@layout/item_benefit" android:id="@+id/benefit5" />
+
+            </LinearLayout>
+
+            <!-- Product Selection -->
+            <LinearLayout
+                android:id="@+id/layoutPurchase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="32dp">
+
+                <TextView
+                    style="@style/TextAppearance.Lumora.TitleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHOOSE YOUR PLAN"
+                    android:textColor="?attr/colorPrimary"
+                    android:letterSpacing="0.1"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/layoutProducts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/btnRestore"
+                    style="@style/TextAppearance.Lumora.LabelLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:padding="12dp"
+                    android:text="Restore Purchases"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomActionArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/colorBackground"
+        android:elevation="16dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinue"
+            style="@style/Widget.Lumora.Button"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="Start Free Trial"
+            android:textSize="18sp" />
+
+        <TextView
+            style="@style/TextAppearance.Lumora.LabelSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:alpha="0.5"
+            android:text="Subscriptions renew automatically. Cancel anytime in Play Store."
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

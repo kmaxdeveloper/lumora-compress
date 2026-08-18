@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Lumora.Card.Filled"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing_16"
+    android:layout_marginVertical="@dimen/spacing_8"
+    app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_12">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivThumbnail"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Lumora.Medium"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tvFileName"
+            style="@style/TextAppearance.Lumora.TitleMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintEnd_toStartOf="@+id/tvReduction"
+            app:layout_constraintStart_toEndOf="@+id/ivThumbnail"
+            app:layout_constraintTop_toTopOf="@+id/ivThumbnail"
+            tools:text="IMG_20240101.jpg" />
+
+        <TextView
+            android:id="@+id/tvFileSize"
+            style="@style/TextAppearance.Lumora.BodySmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintBottom_toBottomOf="@+id/ivThumbnail"
+            app:layout_constraintEnd_toStartOf="@+id/tvReduction"
+            app:layout_constraintStart_toStartOf="@+id/tvFileName"
+            app:layout_constraintTop_toBottomOf="@+id/tvFileName"
+            tools:text="1.2 MB → 450 KB" />
+
+        <TextView
+            android:id="@+id/tvReduction"
+            style="@style/TextAppearance.Lumora.TitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorSecondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="-65%" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

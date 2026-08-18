@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardContainer"
+    style="@style/Widget.Lumora.Card.Filled"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing_16"
+    android:layout_marginVertical="@dimen/spacing_8"
+    android:checkable="true"
+    app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_12">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivThumbnail"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Lumora.Medium"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tvFileName"
+            style="@style/TextAppearance.Lumora.TitleMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_8"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintEnd_toStartOf="@+id/ivFavorite"
+            app:layout_constraintStart_toEndOf="@+id/ivThumbnail"
+            app:layout_constraintTop_toTopOf="@+id/ivThumbnail"
+            tools:text="compressed_image.jpg" />
+
+        <TextView
+            android:id="@+id/tvResolution"
+            style="@style/TextAppearance.Lumora.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            app:layout_constraintStart_toStartOf="@+id/tvFileName"
+            app:layout_constraintTop_toBottomOf="@+id/tvFileName"
+            tools:text="1920x1080" />
+
+        <LinearLayout
+            android:id="@+id/layoutSizes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_4"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/tvFileName"
+            app:layout_constraintStart_toStartOf="@+id/tvFileName"
+            app:layout_constraintTop_toBottomOf="@+id/tvResolution">
+
+            <TextView
+                android:id="@+id/tvSizeOriginal"
+                style="@style/TextAppearance.Lumora.BodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.6"
+                tools:text="2.5 MB" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/spacing_4"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_arrow_right"
+                app:tint="?attr/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvSizeCompressed"
+                style="@style/TextAppearance.Lumora.BodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                tools:text="450 KB" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSavings"
+            style="@style/TextAppearance.Lumora.LabelLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_4"
+            android:textColor="?attr/colorSecondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvFileName"
+            app:layout_constraintTop_toBottomOf="@+id/layoutSizes"
+            tools:text="-82%" />
+
+        <ImageView
+            android:id="@+id/ivShare"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:contentDescription="@string/btn_share"
+            android:padding="6dp"
+            android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="?attr/colorOnSurfaceVariant" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            style="@style/TextAppearance.Lumora.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_8"
+            android:alpha="0.5"
+            app:layout_constraintBottom_toBottomOf="@+id/ivShare"
+            app:layout_constraintEnd_toStartOf="@+id/ivShare"
+            app:layout_constraintTop_toTopOf="@+id/ivShare"
+            tools:text="Aug 01, 2026" />
+
+        <ImageView
+            android:id="@+id/ivFavorite"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:contentDescription="@string/settings"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary"
+            tools:src="@android:drawable/btn_star_big_off" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

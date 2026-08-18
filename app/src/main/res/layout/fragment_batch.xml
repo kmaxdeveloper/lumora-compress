@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="Batch Compress"
+            app:titleCentered="true" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Overall Progress -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_24"
+            app:cardBackgroundColor="?attr/colorPrimaryContainer"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Lumora.ExtraLarge">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_24">
+
+                <TextView
+                    android:id="@+id/tvOverallProgress"
+                    style="@style/TextAppearance.Lumora.HeadlineSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorOnPrimaryContainer"
+                    android:textStyle="bold"
+                    tools:text="Overall: 45%" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progressOverall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_16"
+                    app:indicatorColor="?attr/colorOnPrimaryContainer"
+                    app:trackColor="?attr/colorOnPrimaryContainer"
+                    app:trackCornerRadius="4dp"
+                    app:trackThickness="8dp" />
+
+                <TextView
+                    android:id="@+id/tvRemainingTime"
+                    style="@style/TextAppearance.Lumora.LabelSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_12"
+                    android:alpha="0.8"
+                    android:textColor="?attr/colorOnPrimaryContainer"
+                    tools:text="Estimated remaining: 2m 14s" />
+
+                <!-- Current Item Preview -->
+                <LinearLayout
+                    android:id="@+id/layoutCurrentItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_gradient_scrim"
+                    android:backgroundTint="#1A000000"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivCurrentPreview"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Lumora.Small"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvCurrentName"
+                        style="@style/TextAppearance.Lumora.LabelMedium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:ellipsize="middle"
+                        android:maxLines="1"
+                        android:textColor="?attr/colorOnPrimaryContainer"
+                        tools:text="Processing: current_image.jpg" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvBatchSummary"
+                    style="@style/TextAppearance.Lumora.TitleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_16"
+                    android:text="Batch Completed Successfully! 🎉"
+                    android:textColor="?attr/colorOnPrimaryContainer"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvQueue"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp"
+            tools:listitem="@layout/item_batch_queue" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStartPause"
+        style="@style/Widget.Lumora.Button"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/spacing_24"
+        android:text="@string/start_batch" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

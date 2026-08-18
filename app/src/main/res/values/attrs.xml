@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme-aware aliases for Kotlin components. -->
+    <attr name="lumoraPrimary" format="color" />
+    <attr name="lumoraError" format="color" />
+    <attr name="lumoraOnSurfaceVariant" format="color" />
+    <attr name="lumoraPrimaryContainer" format="color" />
+    <attr name="lumoraSurfaceVariant" format="color" />
+    <attr name="lumoraSecondary" format="color" />
+    <attr name="lumoraOnSecondary" format="color" />
+    <attr name="lumoraOutline" format="color" />
+</resources>

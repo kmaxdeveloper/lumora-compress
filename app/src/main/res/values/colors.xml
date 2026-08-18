@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Lumora Core Brand Palette -->
+    <color name="lumora_primary">#123C8C</color> <!-- Deep Blue -->
+    <color name="lumora_on_primary">#FFFFFF</color>
+    <color name="lumora_primary_container">#D7E2FF</color>
+    <color name="lumora_on_primary_container">#001945</color>
+
+    <color name="lumora_accent">#B7E63C</color> <!-- Soft Lime -->
+    <color name="lumora_on_accent">#1D3700</color>
+    <color name="lumora_accent_container">#D2F46E</color>
+    <color name="lumora_on_accent_container">#0B1F00</color>
+
+    <color name="lumora_high_energy">#76FF03</color> <!-- A400 Lime -->
+
+    <!-- Surfaces & Backgrounds -->
+    <color name="lumora_background">#F7F9FC</color>
+    <color name="lumora_on_background">#101828</color>
+    <color name="lumora_surface">#FFFFFF</color>
+    <color name="lumora_on_surface">#101828</color>
+    <color name="lumora_surface_variant">#E0E2EC</color>
+    <color name="lumora_on_surface_variant">#667085</color>
+    <color name="lumora_outline">#74777F</color>
+    <color name="lumora_outline_variant">#C4C6D0</color>
+
+    <!-- Semantic Mapping to Material 3 Names -->
+    <color name="md_theme_primary">@color/lumora_primary</color>
+    <color name="md_theme_onPrimary">@color/lumora_on_primary</color>
+    <color name="md_theme_primaryContainer">@color/lumora_primary_container</color>
+    <color name="md_theme_onPrimaryContainer">@color/lumora_on_primary_container</color>
+
+    <color name="md_theme_secondary">@color/lumora_accent</color>
+    <color name="md_theme_onSecondary">@color/lumora_on_accent</color>
+    <color name="md_theme_secondaryContainer">@color/lumora_accent_container</color>
+    <color name="md_theme_onSecondaryContainer">@color/lumora_on_accent_container</color>
+
+    <color name="md_theme_tertiary">#7D5260</color>
+    <color name="md_theme_onTertiary">#FFFFFF</color>
+    <color name="md_theme_tertiaryContainer">#FFD8E4</color>
+    <color name="md_theme_onTertiaryContainer">#31111D</color>
+
+    <color name="md_theme_error">#BA1A1A</color>
+    <color name="md_theme_onError">#FFFFFF</color>
+    <color name="md_theme_errorContainer">#FFDAD6</color>
+    <color name="md_theme_onErrorContainer">#410002</color>
+
+    <color name="md_theme_background">@color/lumora_background</color>
+    <color name="md_theme_onBackground">@color/lumora_on_background</color>
+    <color name="md_theme_surface">@color/lumora_surface</color>
+    <color name="md_theme_onSurface">@color/lumora_on_surface</color>
+    <color name="md_theme_surfaceVariant">@color/lumora_surface_variant</color>
+    <color name="md_theme_onSurfaceVariant">@color/lumora_on_surface_variant</color>
+    <color name="md_theme_outline">@color/lumora_outline</color>
+    <color name="md_theme_outlineVariant">@color/lumora_outline_variant</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

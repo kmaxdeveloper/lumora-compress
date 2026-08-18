@@ -1,0 +1,6 @@
+- `[x]` Upgrading SDK to Android 16 (API 36)
+- `[x]` Hardening Billing Security
+- `[/]` Implementing SelectedImagesRepository for Binder Safety
+- `[ ]` Re-wiring Gallery to Batch navigation
+- `[ ]` Foreground Service Readiness & Lifecycle check
+- `[ ]` Release Build & Verification (AAB/R8)

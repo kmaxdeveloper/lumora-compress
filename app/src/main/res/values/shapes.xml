@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ShapeAppearance.Lumora.ExtraSmall" parent="ShapeAppearance.Material3.Corner.ExtraSmall">
+        <item name="cornerSize">@dimen/radius_8</item>
+    </style>
+
+    <style name="ShapeAppearance.Lumora.Small" parent="ShapeAppearance.Material3.Corner.Small">
+        <item name="cornerSize">@dimen/radius_8</item>
+    </style>
+
+    <style name="ShapeAppearance.Lumora.Medium" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerSize">@dimen/radius_12</item>
+    </style>
+
+    <style name="ShapeAppearance.Lumora.Large" parent="ShapeAppearance.Material3.Corner.Large">
+        <item name="cornerSize">@dimen/radius_16</item>
+    </style>
+
+    <style name="ShapeAppearance.Lumora.ExtraLarge" parent="ShapeAppearance.Material3.Corner.ExtraLarge">
+        <item name="cornerSize">@dimen/radius_24</item>
+    </style>
+</resources>

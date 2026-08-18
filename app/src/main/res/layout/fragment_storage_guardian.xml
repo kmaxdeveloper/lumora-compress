@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="@string/storage_guardian"
+            app:titleCentered="true" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/spacing_24"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_24">
+
+            <!-- Health Score Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Lumora.ExtraLarge"
+                app:cardBackgroundColor="?attr/colorSecondaryContainer">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_24">
+
+                    <TextView
+                        style="@style/TextAppearance.Lumora.TitleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/storage_health"
+                        android:textColor="?attr/colorOnSecondaryContainer" />
+
+                    <FrameLayout
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="@dimen/spacing_16">
+
+                        <com.google.android.material.progressindicator.CircularProgressIndicator
+                            android:id="@+id/progressHealth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:indicatorSize="160dp"
+                            app:trackThickness="12dp"
+                            app:indicatorColor="?attr/colorPrimary"
+                            app:trackColor="?attr/colorOnSecondaryContainer"
+                            app:trackCornerRadius="8dp"
+                            tools:progress="75" />
+
+                        <TextView
+                            android:id="@+id/tvHealthScore"
+                            style="@style/TextAppearance.Lumora.HeadlineLarge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="?attr/colorOnSecondaryContainer"
+                            android:textStyle="bold"
+                            tools:text="75" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tvHealthLabel"
+                        style="@style/TextAppearance.Lumora.HeadlineSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_12"
+                        android:textColor="?attr/colorOnSecondaryContainer"
+                        tools:text="Good" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Saving Potential Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_24"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorOutlineVariant"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Lumora.Large">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_20">
+
+                    <TextView
+                        style="@style/TextAppearance.Lumora.LabelMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/potential_saving"
+                        android:alpha="0.7" />
+
+                    <TextView
+                        android:id="@+id/tvPotentialSaving"
+                        style="@style/TextAppearance.Lumora.HeadlineMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_4"
+                        android:textColor="?attr/colorSecondary"
+                        android:textStyle="bold"
+                        tools:text="1.2 GB" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Stats Grid -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_24"
+                android:columnCount="2"
+                android:rowCount="2"
+                android:useDefaultMargins="true">
+
+                <include
+                    android:id="@+id/layoutTotalCount"
+                    layout="@layout/view_stat_item"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1" />
+
+                <include
+                    android:id="@+id/layoutRecentlyAdded"
+                    layout="@layout/view_stat_item"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1" />
+
+            </GridLayout>
+
+            <!-- Recommendations -->
+            <TextView
+                style="@style/TextAppearance.Lumora.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_32"
+                android:text="@string/recommendations"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/layoutRecommendations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_8"
+                android:orientation="vertical" />
+
+            <!-- Actions -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCompressCamera"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_32"
+                android:text="@string/compress_camera"
+                app:icon="@drawable/ic_camera" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCompressScreenshots"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_12"
+                android:text="@string/compress_screenshots"
+                app:icon="@drawable/ic_settings" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpenBatch"
+                style="@style/Widget.Lumora.Button"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="@dimen/spacing_24"
+                android:text="@string/open_batch" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/loadingIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

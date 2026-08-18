@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Buttons -->
+    <style name="Widget.Lumora.Button" parent="Widget.Material3.Button">
+        <item name="shapeAppearance">@style/ShapeAppearance.Lumora.Medium</item>
+    </style>
+
+    <style name="Widget.Lumora.Button.TextButton" parent="Widget.Material3.Button.TextButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.Lumora.Medium</item>
+    </style>
+
+    <style name="Widget.Lumora.Button.ElevatedButton" parent="Widget.Material3.Button.ElevatedButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.Lumora.Medium</item>
+    </style>
+
+    <style name="Widget.Lumora.Button.TonalButton" parent="Widget.Material3.Button.TonalButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.Lumora.Medium</item>
+    </style>
+
+    <!-- Cards -->
+    <style name="Widget.Lumora.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="shapeAppearance">@style/ShapeAppearance.Lumora.Medium</item>
+    </style>
+
+    <style name="Widget.Lumora.Card.Filled" parent="Widget.Material3.CardView.Filled">
+        <item name="shapeAppearance">@style/ShapeAppearance.Lumora.Medium</item>
+    </style>
+
+    <style name="Widget.Lumora.Card.Outlined" parent="Widget.Material3.CardView.Outlined">
+        <item name="shapeAppearance">@style/ShapeAppearance.Lumora.Medium</item>
+    </style>
+
+    <!-- Toolbar -->
+    <style name="Widget.Lumora.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="titleTextAppearance">@style/TextAppearance.Lumora.TitleLarge</item>
+    </style>
+
+    <!-- Bottom Sheet -->
+    <style name="Widget.Lumora.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="shapeAppearance">@style/ShapeAppearance.Lumora.Large</item>
+    </style>
+
+    <!-- Navigation Bar -->
+    <style name="Widget.Lumora.NavigationBar" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.Lumora.LabelMedium</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.Lumora.LabelMedium</item>
+    </style>
+</resources>

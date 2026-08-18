@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.Lumora.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="@string/compression_intelligence" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <include
+            android:id="@+id/viewLoading"
+            layout="@layout/view_loading"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/viewError"
+            layout="@layout/view_error_state"
+            android:visibility="gone" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/spacing_16"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/summaryCard"
+                    style="@style/Widget.Lumora.Card.Filled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_16"
+                    app:cardBackgroundColor="?attr/colorSecondaryContainer">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_24">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="?attr/colorPrimary"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <TextView
+                                style="@style/TextAppearance.Lumora.LabelSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp"
+                                android:paddingVertical="4dp"
+                                android:text="@string/smart_recommendation"
+                                android:textColor="?attr/colorOnPrimary"
+                                android:textAllCaps="true"
+                                android:letterSpacing="0.1"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/summaryTitle"
+                            style="@style/TextAppearance.Lumora.TitleLarge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="?attr/colorOnSecondaryContainer"
+                            tools:text="Great result predicted!" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_20"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/TextAppearance.Lumora.LabelSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:alpha="0.7"
+                                    android:text="@string/estimated_size"
+                                    android:textColor="?attr/colorOnSecondaryContainer" />
+
+                                <TextView
+                                    android:id="@+id/tvEstimatedSize"
+                                    style="@style/TextAppearance.Lumora.HeadlineSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing_4"
+                                    android:textStyle="bold"
+                                    android:textColor="?attr/colorOnSecondaryContainer"
+                                    tools:text="1.2 MB" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/TextAppearance.Lumora.LabelSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:alpha="0.7"
+                                    android:text="@string/saved_space"
+                                    android:textColor="?attr/colorOnSecondaryContainer" />
+
+                                <TextView
+                                    android:id="@+id/tvSavedSpace"
+                                    style="@style/TextAppearance.Lumora.HeadlineSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing_4"
+                                    android:textColor="?attr/colorOnSecondaryContainer"
+                                    android:textStyle="bold"
+                                    tools:text="85%" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/spacing_20"
+                            app:dividerColor="?attr/colorOnSecondaryContainer"
+                            android:alpha="0.1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/TextAppearance.Lumora.LabelSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:alpha="0.7"
+                                    android:text="@string/quality"
+                                    android:textColor="?attr/colorOnSecondaryContainer" />
+
+                                <TextView
+                                    android:id="@+id/tvQuality"
+                                    style="@style/TextAppearance.Lumora.TitleMedium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing_4"
+                                    android:textColor="?attr/colorOnSecondaryContainer"
+                                    tools:text="90%" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/TextAppearance.Lumora.LabelSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:alpha="0.7"
+                                    android:text="@string/estimated_time"
+                                    android:textColor="?attr/colorOnSecondaryContainer" />
+
+                                <TextView
+                                    android:id="@+id/tvTime"
+                                    style="@style/TextAppearance.Lumora.TitleMedium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing_4"
+                                    android:textColor="?attr/colorOnSecondaryContainer"
+                                    tools:text="0.5s" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/TextAppearance.Lumora.LabelSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:alpha="0.7"
+                                    android:text="@string/format"
+                                    android:textColor="?attr/colorOnSecondaryContainer" />
+
+                                <TextView
+                                    android:id="@+id/tvFormat"
+                                    style="@style/TextAppearance.Lumora.TitleMedium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing_4"
+                                    android:textColor="?attr/colorOnSecondaryContainer"
+                                    tools:text="WEBP" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    style="@style/TextAppearance.Lumora.TitleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_24"
+                    android:text="@string/predicted_result"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cards"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingHorizontal="@dimen/spacing_12" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.Lumora.Card.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_16">
+
+                    <TextView
+                        android:id="@+id/analysis"
+                        style="@style/TextAppearance.Lumora.BodyMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="4dp"
+                        android:padding="@dimen/spacing_16"
+                        tools:text="Detailed analysis goes here..." />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </FrameLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continueButton"
+        style="@style/Widget.Lumora.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_16"
+        android:paddingVertical="@dimen/spacing_16"
+        android:text="@string/continue_to_compression"
+        app:cornerRadius="@dimen/radius_16" />
+
+</LinearLayout>
+
